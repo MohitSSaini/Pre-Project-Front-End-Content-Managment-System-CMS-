@@ -1,0 +1,19 @@
+<div class="UserDashBoard">
+  <p>UserDashBoard</p>
+</div>
+<div *ngFor="let content of contentdata "
+  style="display:inline-flex;margin-right: 40px;margin-left: 40px;margin-bottom: 30px;">
+  <mat-card class="example-card">
+    <mat-card-subtitle>{{content.emailId}}</mat-card-subtitle>
+    <mat-card-title>{{content.userName}}</mat-card-title>
+    <mat-card-actions>
+      <button (click)="delete(content.emailId)">Delete</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<!-- <mat-card-content>
+      <p>
+           {{content.contentData}}
+       </p>
+</mat-card-content> -->

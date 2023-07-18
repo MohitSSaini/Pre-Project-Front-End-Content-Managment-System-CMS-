@@ -1,0 +1,74 @@
+<div class="login-box">
+  <h2>Login</h2>
+  <!-- formGroup is directive for reactive form and the variable name is userform
+  ng submit is a direactive that we do event bindind when click the button the form is submited -->
+  <form [formGroup]="userfrom" (ngSubmit)="onSubmit()">
+    <div class="user-box">
+      <input type="email" formControlName="emailId" required>
+      <label>Email ID</label>
+      <div *ngIf="userfrom.get('emailId')?.invalid && (userfrom.get('emailId')?.dirty || userfrom.get('emailId')?.touched)" class="error-message">
+        <span *ngIf="userfrom.get('emailId')?.errors?.['required']">Email ID is required.</span>
+        <span *ngIf="userfrom.get('emailId')?.errors?.['email']">Invalid email format.</span>
+      </div>
+    </div>
+    <div class="user-box">
+      <input type="password" formControlName="password" required>
+      <label>Password</label>
+      <div *ngIf="userfrom.get('password')?.invalid && (userfrom.get('password')?.dirty || userfrom.get('password')?.touched)" class="error-message">
+        <span *ngIf="userfrom.get('password')?.errors?.['required']">Password is required.</span>
+      </div>
+    </div>
+    <button type="submit"  [disabled]="userfrom.invalid"  [ngClass]="{'btn-dark-blue': userfrom.valid}">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Login
+    </button>
+    <div style="margin-top: 2%;">
+      <a routerLink="/signupview" style="color: aliceblue;">New User! Click Here To Sign-Up</a>
+    </div>
+  </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="login-box">
+  <h2>Login</h2>
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div class="user-box">
+      <input type="email" formControlName="emailId" required>
+      <label>Email ID</label>
+      <div *ngIf="isFieldInvalid('emailId')" class="error-message">
+        <span *ngIf="isFieldInvalid('emailId', 'required')">Email ID is required.</span>
+        <span *ngIf="isFieldInvalid('emailId', 'email')">Invalid email format.</span>
+      </div>
+    </div>
+    <div class="user-box">
+      <input type="password" formControlName="password" required>
+      <label>Password</label>
+      <div *ngIf="isFieldInvalid('password')" class="error-message">
+        <span *ngIf="isFieldInvalid('password', 'required')">Password is required.</span>
+      </div>
+    </div>
+    <button type="submit" [disabled]="userForm.invalid" [ngClass]="{'btn-dark-blue': userForm.valid}">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Login
+    </button>
+    <div style="margin-top: 2%;">
+      <a routerLink="/signupview" style="color: aliceblue;">New User! Click Here To Sign-Up</a>
+    </div>
+  </form>
+</div> -->

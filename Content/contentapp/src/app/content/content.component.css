@@ -1,0 +1,100 @@
+p {
+  color: #fff;
+  text-align: center;
+}
+
+.example-card {
+  width: 300px;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, .5);
+  color: #fff;
+}
+
+.example-card mat-card-title-group {
+  padding: 10px;
+}
+
+.example-card mat-card-subtitle {
+  color: #fff;
+}
+
+.example-card mat-card-content p {
+  margin: 0;
+}
+
+.example-card mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.example-card mat-card-actions button {
+  color: #09dde9;
+  border: none;
+  background-color: transparent;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.example-card mat-card-actions button:hover {
+  color: #fff;
+}
+
+.example-form {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.example-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-bottom: 1px solid #03e9f4;
+  background-color: rgba(0, 0, 0, .5);
+  color: #fff;
+  outline: none;
+}
+
+.example-form button[type="submit"] {
+  color: #09dde9;
+  border: none;
+  background-color: transparent;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.example-form button[type="submit"]:hover {
+  color: #fff;
+}
+
+.btn {
+  color: #09dde9;
+  border: none;
+  background-color: transparent;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn:hover {
+  background-color: #09dde9;
+  color: #fff;
+}
+
+.btn-outline-success.align {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contentBox{
+  text-align: center;
+  color: white;
+  margin: 50px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: xx-large;
+}

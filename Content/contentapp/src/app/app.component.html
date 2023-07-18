@@ -1,0 +1,17 @@
+<div>
+  <mat-toolbar>
+    <!-- router link is used to nevgate the pages  -->
+    <a routerLink="/"><img src="../assets/logo-no-background.png" class="logo-image"></a>
+    <span class="example-spacer"></span>
+    <a routerLink="/signupview" class="button-link">SIGNUP</a>
+    <span class="example-spacer"></span>
+    <a routerLink="/loginview" class="button-link">LOGIN</a>
+    <span class="example-spacer"></span>
+    <a routerLink="/contentview" class="button-link">CONTENTS</a>
+    <span class="example-spacer"></span>
+    <a routerLink="/userview" class="button-link" *ngIf="loginPart()">USERDASHBOARD</a>
+    <span class="example-spacer"></span>
+    <button (click)="logout()" class="logout-button">LOGOUT</button>
+  </mat-toolbar>
+</div>
+<router-outlet></router-outlet>

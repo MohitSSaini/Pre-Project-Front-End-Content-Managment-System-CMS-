@@ -1,0 +1,37 @@
+<div class="addcontent-box">
+<p>Addcontent-Works</p>
+</div>
+<form class="example-form" [formGroup]="contentform" (ngSubmit)="addcontent()">
+
+    <div>
+        <input type="number" matInput placeholder="*ID" formControlName="cid" class="size">
+    </div>
+    <br>
+    <div >
+        <input type="text" matInput placeholder="*title" formControlName="title" class="size">
+        <div *ngIf="contentform.get('title')?.invalid && (contentform.get('title')?.dirty || contentform.get('title')?.touched)" class="error-message">
+          <span *ngIf="contentform.get('title')?.errors?.['required']">Title is required.</span>
+        </div>
+      </div>
+      <br>
+      <div>
+        <input type="text" matInput placeholder="*description" formControlName="description" class="size">
+        <div *ngIf="contentform.get('description')?.invalid && (contentform.get('description')?.dirty || contentform.get('description')?.touched)" class="error-message">
+          <span *ngIf="contentform.get('description')?.errors?.['required']">description is required.</span>
+        </div>
+    </div><br>
+    <div >
+        <input type="text" matInput placeholder="*writer" formControlName="writer" class="size">
+        <div *ngIf="contentform.get('writer')?.invalid && (contentform.get('writer')?.dirty || contentform.get('writer')?.touched)" class="error-message">
+          <span *ngIf="contentform.get('writer')?.errors?.['required']">writer is required.</span>
+        </div>
+    </div><br>
+    <div >
+        <input type="text" matInput placeholder="*topic" formControlName="topic" class="size">
+        <div *ngIf="contentform.get('topic')?.invalid && (contentform.get('topic')?.dirty || contentform.get('topic')?.touched)" class="error-message">
+          <span *ngIf="contentform.get('topic')?.errors?.['required']">topic is required.</span>
+        </div>
+    </div><br>
+    <button type="submit" >Save</button>
+    </form>
+

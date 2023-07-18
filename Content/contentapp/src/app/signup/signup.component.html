@@ -1,0 +1,46 @@
+<div class="signup-box">
+  <h2>Sign Up</h2>
+  <!-- formGroup is directive for reactive form and the variable name is userform
+  ngsubmit is a direactive that we do event bindind when click the button the form is submited -->
+  <form [formGroup]="userform" (ngSubmit)="onSubmit()">
+    <div class="user-box">
+      <input type="text" formControlName="userId" required>
+      <label>User ID</label>
+      <div *ngIf="userId && (userId.invalid && (userId.dirty || userId.touched))" class="error-message">
+        <span *ngIf="userId.errors?.['required']">User ID is required.</span>
+      </div>
+    </div>
+    <div class="user-box">
+      <input type="email" formControlName="emailId" required>
+      <label>Email ID</label>
+      <div *ngIf="emailId && (emailId.invalid && (emailId.dirty || emailId.touched))" class="error-message">
+        <span *ngIf="emailId.errors?.['required']">Email ID is required.</span>
+        <span *ngIf="emailId.errors?.['email']">Invalid email format.</span>
+      </div>
+    </div>
+    <div class="user-box">
+      <input type="password" formControlName="password" required>
+      <label>Password</label>
+      <div *ngIf="password && (password.invalid && (password.dirty || password.touched))" class="error-message">
+        <span *ngIf="password.errors?.['required']">Password is required.</span>
+      </div>
+    </div>
+    <!-- <div class="user-box">
+      <input type="text" formControlName="username" required>
+      <label>Username</label>
+      <div *ngIf="username && (username.invalid && (username.dirty || username.touched))" class="error-message">
+        <span *ngIf="username.errors?.['required']">Username is required.</span>
+      </div>
+    </div> -->
+    <button type="submit" [disabled]="userform.invalid" [ngClass]="{'btn-dark-blue': userform.valid}">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Sign Up
+    </button>
+    <div style="margin-top: 2%;">
+      <a routerLink="/loginview" style="color: aliceblue;">If Already Registerd then Click Here To Log-In </a>
+  </div>
+  </form>
+</div>

@@ -1,0 +1,47 @@
+<div class="contentBox">
+  <p>CONTENT</p>
+</div>
+<div *ngFor="let content of contArray"
+  style="display:inline-flex;margin-right: 40px;margin-left: 40px;margin-bottom: 30px;">
+  <mat-card class="example-card">
+    <mat-card-title-group>
+      <mat-card-subtitle>{{content.cid}}</mat-card-subtitle>
+      <mat-card-title>{{content.title}}</mat-card-title>
+      <mat-card-subtitle>{{content.writer}}</mat-card-subtitle>
+      <mat-card-subtitle>{{content.topic}}</mat-card-subtitle>
+    </mat-card-title-group>
+    <mat-card-content>
+      <p>
+        {{content.description}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button (click)="deletecontent(content.cid)">Delete</button>
+      <button (click)="update(content)">Update</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+<br>
+<div>
+  <form class="example-form" [formGroup]="contentform1" (ngSubmit)="savedata()" *ngIf="enable">
+
+    <div> 
+      <input type="number" matInput placeholder="*ID" formControlName="cid" class="size">
+    </div><br>
+    <div>
+      <input type="text" matInput placeholder="*title" formControlName="title" class="size">
+    </div><br>
+    <div>
+      <input type="text" matInput placeholder="*description" formControlName="description" class="size">
+    </div><br>
+    <div>
+      <input type="text" matInput placeholder="*writer" formControlName="writer" class="size">
+    </div><br>
+    <div>
+      <input type="text" matInput placeholder="*topic" formControlName="topic" class="size">
+    </div><br>
+    <button type="submit">Update</button>
+  </form>
+</div>
+<br>
+<button type="button" class="btn btn-outline-success align" routerLink="/addcontent">AddContent</button>
