@@ -9,7 +9,7 @@ import { SignupComponent } from './signup/signup.component';
 import { UserdetailsComponent } from './userdetails/userdetails.component';
 
 const routes: Routes = [
-  { path: ' ', component: UserdetailsComponent },
+  { path: ' ', component: AppComponent },
   { path: 'signupview', component: SignupComponent },
   { path: 'loginview', component: LoginComponent },
   {
